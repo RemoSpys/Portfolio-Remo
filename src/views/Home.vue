@@ -31,7 +31,7 @@
     </div>
 
     <!-- Call-to-Action Section -->
-    <div class="bg-yellow-200 text-gray-900">
+    <div class="bg-black text-gray-900">
       <LetsTalk />
     </div>
 
@@ -47,7 +47,6 @@ import ServicesGrid from '../components/ServicesGrid.vue';
 import SelectedWorkGrid from '../components/SelectedWorkGrid.vue';
 import ClientFeedback from '../components/ClientFeedback.vue';
 import LetsTalk from '../components/LetsTalk.vue';
-import Footer from '../components/Footer.vue';
 
 export default {
   name: 'Home',
@@ -57,8 +56,7 @@ export default {
     ServicesGrid,
     SelectedWorkGrid,
     ClientFeedback,
-    LetsTalk,
-    Footer
+    LetsTalk
   }
 };
 </script>

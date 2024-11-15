@@ -1,6 +1,5 @@
 <template>
-  <section class="py-24 px-6 bg-black text-white flex flex-col items-center">
-    <!-- Centered Icon Grid -->
+  <section class="py-24 px-6 bg-black text-white flex flex-col items-center opacity-0 transform translate-y-10" ref="servicesSection">
     <div class="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-6 justify-center mb-12 max-w-screen-lg">
       <i class="devicon-html5-plain colored text-6xl"></i>
       <i class="devicon-tailwindcss-plain colored text-6xl"></i>
@@ -10,13 +9,12 @@
       <i class="devicon-css3-plain colored text-6xl"></i>
       <i class="devicon-java-plain colored text-6xl"></i>
       <i class="devicon-mysql-plain colored text-6xl"></i>
-      <i class="devicon-windows8-original colored text-6xl"></i> <!-- Representing PowerShell -->
+      <i class="devicon-windows8-original colored text-6xl"></i>
       <i class="devicon-php-plain colored text-6xl"></i>
       <i class="devicon-bash-plain colored text-6xl"></i>
       <i class="devicon-cplusplus-plain colored text-6xl"></i>
     </div>
 
-    <!-- Service Descriptions Grid -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-screen-md">
       <div class="p-6 border border-gray-600 hover:bg-gray-900 transition rounded-lg">
         <h2 class="text-lg font-semibold mb-4">01 WEB DESIGN</h2>
@@ -57,5 +55,47 @@
 <script>
 export default {
   name: 'ServicesGrid',
+  mounted() {
+    const observerOptions = {
+      threshold: 0.1,
+    };
+
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, observerOptions);
+    observer.observe(this.$refs.servicesSection);
+  },
 };
 </script>
+
+<style scoped>
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in-up 0.8s ease-in-out forwards;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.transform {
+  transform: translateY(10px);
+}
+</style>

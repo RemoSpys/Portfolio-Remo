@@ -1,48 +1,172 @@
 <template>
-  <section class="py-24 px-6 bg-yellow-200 text-gray-900 flex flex-col items-center">
-    <!-- Scrolling Text -->
-    <div class="w-full overflow-hidden text-center mb-8">
-      <div class="scrolling-text text-sm font-semibold uppercase text-gray-700 whitespace-nowrap">
-        +++ LET'S TALK +++ LET'S TALK +++ LET'S TALK +++ LET'S TALK +++
-      </div>
-    </div>
-
-    <!-- Heading and Subtitle -->
+  <section class="py-24 px-6 bg-black text-gray-100 flex flex-col items-center opacity-0 transform translate-y-10" ref="contactFormSection">
     <div class="text-center mb-12">
-      <p class="text-sm uppercase tracking-widest text-gray-700 mb-2">Project in Mind?</p>
-      <h2 class="text-5xl font-light italic">Let’s make your</h2>
-      <h1 class="text-7xl font-bold italic mb-4">Website shine</h1>
-      <p class="text-lg font-light text-gray-700">Premium web design, webflow, and SEO services to help your business stand out.</p>
+      <h2 class="text-5xl font-light italic">Get in Touch</h2>
+      <p class="text-lg font-light text-gray-300">
+        Have a question or want to work together? Send us a message!
+      </p>
     </div>
 
-    <!-- Call-to-Action Button -->
-    <button class="flex items-center bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition duration-300">
-      GET IN TOUCH
-      <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-      </svg>
-    </button>
+    <form
+      class="bg-gray-700 bg-opacity-50 shadow-md rounded-lg px-8 py-6 w-full max-w-lg backdrop-filter backdrop-blur-md"
+      @submit.prevent="sendMessage"
+    >
+      <div class="mb-4">
+        <label
+          for="name"
+          class="block text-gray-300 text-sm font-bold mb-2"
+        >
+          Name
+        </label>
+        <input
+          type="text"
+          id="name"
+          v-model="form.name"
+          placeholder="Your Name"
+          class="animated-placeholder appearance-none border border-gray-500 rounded w-full py-2 px-3 text-gray-300 bg-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-gray-500"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label
+          for="email"
+          class="block text-gray-300 text-sm font-bold mb-2"
+        >
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          v-model="form.email"
+          placeholder="Your Email"
+          class="animated-placeholder appearance-none border border-gray-500 rounded w-full py-2 px-3 text-gray-300 bg-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-gray-500"
+        />
+      </div>
+
+      <div class="mb-6">
+        <label
+          for="message"
+          class="block text-gray-300 text-sm font-bold mb-2"
+        >
+          Message
+        </label>
+        <textarea
+          id="message"
+          v-model="form.message"
+          placeholder="Your Message"
+          rows="4"
+          class="animated-placeholder appearance-none border border-gray-500 rounded w-full py-2 px-3 text-gray-300 bg-gray-800 leading-tight focus:outline-none focus:ring-2 focus:ring-gray-500"
+        ></textarea>
+      </div>
+
+      <div class="flex items-center justify-center">
+        <button
+          type="submit"
+          class="bg-gray-600 bg-opacity-75 text-gray-100 px-6 py-3 rounded-lg hover:bg-gray-500 transition duration-300"
+        >
+          Send Message
+        </button>
+      </div>
+    </form>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'LetsTalk',
+  name: "ContactForm",
+  data() {
+    return {
+      form: {
+        name: "",
+        email: "",
+        message: "",
+      },
+    };
+  },
+  methods: {
+    async sendMessage() {
+      const webhookUrl =
+        "https://discord.com/api/webhooks/1306877982010511380/nNpGGTi7S4mt1c5xg0AvY1xd4Xmy9ITWFdeUkeShop9taC2dopQ11DQJ4khX9yZl3dV0";
+      const payload = {
+        content: `**Name:** ${this.form.name}\n**Email:** ${this.form.email}\n**Message:** ${this.form.message}`,
+      };
+
+      try {
+        const response = await fetch(webhookUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (response.ok) {
+          alert("Message sent successfully!");
+          this.form.name = "";
+          this.form.email = "";
+          this.form.message = "";
+        } else {
+          alert("Failed to send message.");
+        }
+      } catch (error) {
+        alert("An error occurred. Please try again later.");
+      }
+    },
+  },
+  mounted() {
+    const observerOptions = {
+      threshold: 0.1,
+    };
+
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, observerOptions);
+    observer.observe(this.$refs.contactFormSection);
+  },
 };
 </script>
 
 <style scoped>
-.scrolling-text {
-  display: inline-block;
-  animation: scroll-text 10s linear infinite;
+.animated-placeholder::placeholder {
+  color: #4a5568;
+  transition: color 0.3s ease-in-out;
 }
 
-@keyframes scroll-text {
+.animated-placeholder:focus::placeholder {
+  color: transparent;
+}
+
+form {
+  background-color: rgba(55, 65, 81, 0.5); /* Transparent form background */
+}
+
+@keyframes fade-in-up {
   0% {
-    transform: translateX(100%);
+    opacity: 0;
+    transform: translateY(10px);
   }
   100% {
-    transform: translateX(-100%);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.fade-in {
+  animation: fade-in-up 0.8s ease-in-out forwards;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.transform {
+  transform: translateY(10px);
 }
 </style>

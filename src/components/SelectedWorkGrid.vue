@@ -1,5 +1,5 @@
 <template>
-  <section class="py-24 px-6 bg-black text-white flex flex-col items-center">
+  <section class="py-24 px-6 bg-black text-white flex flex-col items-center opacity-0 transform translate-y-10" ref="workSection">
     <h2 class="text-4xl font-semibold mb-12">Selected <span class="italic">Work</span></h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -45,9 +45,47 @@
 <script>
 export default {
   name: 'SelectedWorkGrid',
+  mounted() {
+    const observerOptions = {
+      threshold: 0.1,
+    };
+
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, observerOptions);
+    observer.observe(this.$refs.workSection);
+  },
 };
 </script>
 
 <style scoped>
-/* Optional custom styles for SelectedWorkGrid */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in-up 0.8s ease-in-out forwards;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.transform {
+  transform: translateY(10px);
+}
 </style>

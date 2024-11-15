@@ -2,10 +2,8 @@
   <div class="flex justify-center mt-4">
     <nav class="animated-navbar flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 text-white p-2 bg-gray-800 bg-opacity-60 border-gray-700 border rounded-lg shadow-lg">
       <div class="flex justify-between w-full md:w-auto items-center">
-        <!-- Logo and Brand Name with Hover Animation -->
         <h3 class="font-bold text-2xl text-gray-300 transition-transform duration-300 hover:scale-105">Remo S.</h3>
 
-        <!-- Mobile Menu Toggle Button -->
         <button @click="toggleMenu" class="md:hidden focus:outline-none">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -13,7 +11,6 @@
         </button>
       </div>
 
-      <!-- Desktop Menu Links with Slide Hover Effect -->
       <div class="hidden md:flex flex-row items-center space-x-8">
         <a href="#services" class="nav-link">Services</a>
         <a href="#work" class="nav-link">Work</a>
@@ -23,7 +20,6 @@
         <button class="bg-gray-700 text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors duration-200">Let's Talk</button>
       </div>
 
-      <!-- Mobile Dropdown Menu with Animation -->
       <transition name="slide-fade" mode="out-in">
         <div v-if="isMenuOpen" class="flex flex-col space-y-4 w-full items-center md:hidden mt-4">
           <a href="#services" @click="closeMenu" class="hover:underline hover:text-gray-400 transition-colors duration-200">Services</a>
@@ -54,7 +50,6 @@ export default {
 </script>
 
 <style scoped>
-/* Navbar Fade-in Animation */
 .animated-navbar {
   opacity: 0;
   transform: translateY(-10px);
@@ -68,7 +63,6 @@ export default {
   }
 }
 
-/* Slide and fade transition for mobile dropdown */
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: all 0.3s ease;

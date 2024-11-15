@@ -1,30 +1,24 @@
 <template>
   <footer class="bg-black text-gray-400 py-12 px-6">
     <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-      <!-- Social Links Section -->
       <div class="flex flex-col space-y-6 items-start">
-        <h3 class="text-lg font-semibold text-gray-300">Follow Us</h3>
+        <h3 class="text-lg font-semibold text-gray-300">Follow Me</h3>
         <div class="flex flex-col space-y-4">
-          <a href="#" class="flex items-center space-x-4 hover:text-white transition">
-            <div class="w-8 h-8 rounded-full border border-gray-400"></div>
-            <span class="text-sm">Instagram</span>
+          <a href="https://github.com/RemoSpys" target="_blank" class="flex items-center space-x-4 hover:text-white transition">
+            <div class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-400">
+              <Icon icon="mdi:github" class="h-6 w-6" />
+            </div>
+            <span class="text-sm">GitHub</span>
           </a>
-          <a href="#" class="flex items-center space-x-4 hover:text-white transition">
-            <div class="w-8 h-8 rounded-full border border-gray-400"></div>
-            <span class="text-sm">Twitter</span>
-          </a>
-          <a href="#" class="flex items-center space-x-4 hover:text-white transition">
-            <div class="w-8 h-8 rounded-full border border-gray-400"></div>
-            <span class="text-sm">Dribbble</span>
-          </a>
-          <a href="#" class="flex items-center space-x-4 hover:text-white transition">
-            <div class="w-8 h-8 rounded-full border border-gray-400"></div>
-            <span class="text-sm">Behance</span>
-          </a>
+          <div @click="showDiscord" class="flex items-center space-x-4 hover:text-white transition cursor-pointer">
+            <div class="w-8 h-8 flex items-center justify-center rounded-full border border-gray-400">
+              <Icon icon="ic:baseline-discord" class="h-6 w-6" />
+            </div>
+            <span class="text-sm">Discord</span>
+          </div>
         </div>
       </div>
 
-      <!-- Pages Links -->
       <div>
         <h3 class="text-lg font-semibold text-gray-300">Pages</h3>
         <ul class="space-y-2 mt-4">
@@ -35,7 +29,6 @@
         </ul>
       </div>
 
-      <!-- CMS Links -->
       <div>
         <h3 class="text-lg font-semibold text-gray-300">CMS</h3>
         <ul class="space-y-2 mt-4">
@@ -46,7 +39,6 @@
         </ul>
       </div>
 
-      <!-- Utility Pages Links -->
       <div>
         <h3 class="text-lg font-semibold text-gray-300">Utility Pages</h3>
         <ul class="space-y-2 mt-4">
@@ -59,7 +51,6 @@
       </div>
     </div>
 
-    <!-- Footer Bottom -->
     <div class="mt-12 border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
       <p class="text-sm text-gray-500">© 2024 Made by Remo S. Powered by Vue.js.</p>
       <a href="#" @click.prevent="scrollToTop" class="flex items-center space-x-2 text-sm hover:text-white transition cursor-pointer">
@@ -73,8 +64,13 @@
 </template>
 
 <script>
+import { Icon } from '@iconify/vue';
+
 export default {
   name: 'Footer',
+  components: {
+    Icon,
+  },
   methods: {
     scrollToTop() {
       window.scrollTo({
@@ -82,22 +78,24 @@ export default {
         behavior: 'smooth',
       });
     },
+    showDiscord() {
+      alert('Add me on Discord: RemoSpys');
+    },
   },
 };
 </script>
 
 <style scoped>
-/* Responsive and cleaner styles for mobile */
 footer {
-  font-family: 'Nippo', sans-serif; /* Match font if needed */
+  font-family: 'Nippo', sans-serif;
 }
 
 footer a {
-  font-size: 0.875rem; /* Make links smaller and cleaner */
+  font-size: 0.875rem;
 }
 
 footer h3 {
-  letter-spacing: 0.05em; /* Add spacing to headings for a refined look */
+  letter-spacing: 0.05em;
 }
 
 footer .border {
@@ -117,7 +115,6 @@ footer svg:hover {
   transform: translateY(-2px);
 }
 
-/* Adjust padding and spacing for mobile */
 @media (max-width: 768px) {
   footer {
     padding: 16px;

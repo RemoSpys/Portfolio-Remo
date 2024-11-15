@@ -1,8 +1,8 @@
 <template>
-  <section class="flex flex-col md:flex-row items-center justify-center text-white py-24 px-6 bg-black">
+  <section class="flex flex-col md:flex-row items-center justify-center text-white py-24 px-6 bg-black opacity-0 transform translate-y-10" ref="homeSection">
     <div class="text-center md:text-left md:w-1/3">
-      <h1 class="text-5xl md:text-7xl font-bold italic">RemoSpys</h1>
-      <p class="mt-4 text-2xl italic text-gray-300">A website that leaves <br> <span class="text-xl">a lasting impression!</span></p>
+      <h1 class="text-5xl md:text-7xl font-bold italic typing-effect" ref="typingText">RemoSpys</h1>
+      <p class="mt-4 text-2xl italic text-gray-300 typing-effect" ref="subTypingText">A website that leaves <br> <span class="text-xl">a lasting impression!</span></p>
     </div>
 
     <div class="w-full md:w-1/3 my-12 md:my-0 flex justify-center">
@@ -38,9 +38,65 @@
 <script>
 export default {
   name: 'HomeAbout',
+  mounted() {
+    const observerOptions = {
+      threshold: 0.1,
+    };
+
+    const fadeInCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const typingEffectCallback = (element, text) => {
+      let index = 0;
+      const interval = setInterval(() => {
+        if (index < text.length) {
+          element.textContent += text.charAt(index);
+          index++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 100);
+    };
+
+    const observer = new IntersectionObserver(fadeInCallback, observerOptions);
+    observer.observe(this.$refs.homeSection);
+
+    const typingTextElement = this.$refs.typingText;
+    const subTypingTextElement = this.$refs.subTypingText;
+
+    typingEffectCallback(typingTextElement, 'RemoSpys');
+    typingEffectCallback(subTypingTextElement, 'A website that leaves a lasting impression!');
+  },
 };
 </script>
 
 <style scoped>
-/* Optional styling adjustments */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in-up 0.8s ease-in-out forwards;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.transform {
+  transform: translateY(10px);
+}
 </style>
