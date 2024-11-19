@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <Navbar v-if="!isHomeRoute" />
+    <!-- Always show Navbar -->
+    <Navbar />
     <main class="flex-grow">
       <router-view />
     </main>
@@ -9,10 +10,10 @@
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
-import Footer from './components/Footer.vue';
-import { computed } from 'vue';
-import { useRoute } from 'vue-router';
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
 export default {
   components: {
@@ -20,12 +21,12 @@ export default {
     Footer,
   },
   setup() {
-    const route = useRoute();
-    const isHomeRoute = computed(() => route.path === '/'); // Check the exact path
+    const route = useRoute()
+    const isHomeRoute = computed(() => route.path === '/') // Check the exact path
 
     return {
       isHomeRoute,
-    };
+    }
   },
-};
+}
 </script>
