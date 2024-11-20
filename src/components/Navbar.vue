@@ -1,109 +1,166 @@
 <template>
-  <div class="flex justify-center mt-4">
-    <nav class="animated-navbar flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 text-white p-2 bg-gray-800 bg-opacity-60 border-gray-700 border rounded-lg shadow-lg">
-      <div class="flex justify-between w-full md:w-auto items-center">
-        <h3 class="font-bold text-2xl text-gray-300 transition-transform duration-300 hover:scale-105">Remo S.</h3>
+  <div class="sticky top-0 z-50 bg-gray-900 bg-opacity-90 p-4 shadow-lg flex justify-between items-center">
+    <router-link
+      to="/"
+      class="font-bold text-xl text-blue-400 hover:text-blue-500 transition"
+    >
+      Remo.S
+    </router-link>
+    <div class="md:hidden flex items-center">
+      <button
+        @click="toggleMenu"
+        class="text-blue-400 hover:text-blue-500 focus:outline-none transition"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 5h18M3 12h18M3 19h18"
+          />
+        </svg>
+      </button>
+    </div>
 
-        <button @click="toggleMenu" class="md:hidden focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-        </button>
-      </div>
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-8">
+      <router-link
+        v-for="link in links"
+        :key="link.name"
+        :to="link.href"
+        class="flex items-center text-gray-300 hover:text-blue-400 hover:underline transition"
+      >
+        <i :class="link.icon + ' mr-2'"></i>
+        {{ link.name }}
+      </router-link>
+      <button
+        @click="navigateToContact"
+        class="flex items-center text-gray-300 hover:text-blue-400 font-bold p-2 rounded-xl hover:underline transition"
+      >
+        <i class="fas fa-comment-dots mr-2"></i>
+        Let's talk
+      </button>
+    </div>
 
-      <div class="hidden md:flex flex-row items-center space-x-8">
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#blog" class="nav-link">Blog</a>
-        <a href="#pages" class="nav-link">Pages</a>
-        <button class="bg-gray-700 text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors duration-200">Let's Talk</button>
-      </div>
-
-      <transition name="slide-fade" mode="out-in">
-        <div v-if="isMenuOpen" class="flex flex-col space-y-4 w-full items-center md:hidden mt-4">
-          <a href="#services" @click="closeMenu" class="hover:underline hover:text-gray-400 transition-colors duration-200">Services</a>
-          <a href="#work" @click="closeMenu" class="hover:underline hover:text-gray-400 transition-colors duration-200">Work</a>
-          <a href="#about" @click="closeMenu" class="hover:underline hover:text-gray-400 transition-colors duration-200">About</a>
-          <a href="#blog" @click="closeMenu" class="hover:underline hover:text-gray-400 transition-colors duration-200">Blog</a>
-          <a href="#pages" @click="closeMenu" class="hover:underline hover:text-gray-400 transition-colors duration-200">Pages</a>
-          <button @click="closeMenu" class="bg-gray-700 text-gray-200 px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors duration-200">Let's Talk</button>
-        </div>
-      </transition>
-    </nav>
+    <!-- Mobile Menu -->
+    <div
+      v-if="isMenuOpen"
+      class="fixed inset-0 bg-gray-900 bg-opacity-90 z-50 p-6 flex flex-col space-y-6 md:hidden rounded-lg"
+    >
+      <router-link
+        v-for="link in links"
+        :key="link.name"
+        :to="link.href"
+        @click.stop="closeMenu"
+        class="flex items-center text-gray-300 text-lg hover:underline hover:text-blue-400 transition"
+      >
+        <i :class="link.icon + ' mr-2'"></i>
+        {{ link.name }}
+      </router-link>
+      <button
+        @click="navigateToContact"
+        class="flex items-center text-gray-300 font-bold rounded-xl hover:underline transition"
+      >
+        <i class="fas fa-comment-dots mr-2"></i>
+        Let's talk
+      </button>
+      <button
+        @click="closeMenu"
+        class="absolute top-4 right-4 text-gray-300 hover:text-blue-400"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-
 export default {
-  name: 'Navbar',
-  setup() {
-    const isMenuOpen = ref(false);
-    const toggleMenu = () => (isMenuOpen.value = !isMenuOpen.value);
-    const closeMenu = () => (isMenuOpen.value = false);
-
-    return { isMenuOpen, toggleMenu, closeMenu };
+  name: "Navbar",
+  data() {
+    return {
+      links: [
+        { name: "Home", href: "/", icon: "fas fa-home" },
+        { name: "Services", href: "/services", icon: "fas fa-briefcase" },
+        { name: "About", href: "/about", icon: "fas fa-info-circle" },
+      ],
+      isMenuOpen: false,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+    },
+    closeMenu() {
+      this.isMenuOpen = false;
+    },
+    navigateToContact() {
+      this.$router.push("/contact");
+      this.isMenuOpen = false;
+    },
   },
 };
 </script>
 
 <style scoped>
-.animated-navbar {
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeInSlide 0.5s ease-out forwards;
+.bg-gray-900 {
+  background-color: #1f2937;
 }
 
-@keyframes fadeInSlide {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.bg-opacity-90 {
+  background-color: rgba(31, 41, 55, 0.9);
 }
 
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: all 0.3s ease;
-}
-.slide-fade-enter-from {
-  transform: translateY(-10px);
-  opacity: 0;
-}
-.slide-fade-enter-to {
-  transform: translateY(0);
-  opacity: 1;
-}
-.slide-fade-leave-from {
-  transform: translateY(0);
-  opacity: 1;
-}
-.slide-fade-leave-to {
-  transform: translateY(-10px);
-  opacity: 0;
+.text-blue-400 {
+  color: #60a5fa;
 }
 
-/* Slide hover effect for desktop nav links */
-.nav-link {
-  position: relative;
-  padding-bottom: 4px;
-  transition: color 0.3s ease;
+.text-blue-400:hover {
+  color: #3b82f6;
 }
-.nav-link::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: #4b5563;
-  transition: width 0.3s ease;
+
+.text-gray-300 {
+  color: #d1d5db;
 }
-.nav-link:hover {
-  color: #a0aec0;
+
+.text-gray-300:hover {
+  color: #9ca3af;
 }
-.nav-link:hover::after {
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+.fixed.inset-0 {
   width: 100%;
+  height: 100%;
+}
+
+.rounded-b-lg {
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 </style>
