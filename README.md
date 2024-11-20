@@ -40,7 +40,7 @@ Ensure you have the following installed on your system:
 Clone this repository to your local machine:
 
 ```sh
-git clone https://github.com/yourusername/Portfolio-Remo.git
+git clone https://github.com/RemoSpys/Portfolio-Remo
 ```
 
 Replace `yourusername` with the appropriate GitHub username.
