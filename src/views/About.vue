@@ -62,6 +62,59 @@
         </div>
       </div>
 
+<!-- About Me Section -->
+<div class="mt-12 text-center px-6 md:px-10">
+  <div class="flex justify-center items-center w-full">
+    <div
+      class="relative w-full md:w-2/3 lg:w-1/2 px-6 py-8 bg-gray-800 border border-gray-600 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300"
+    >
+      <div class="mt-10">
+        <h3 class="text-2xl font-bold text-white mb-4">Self-Analysis – Remo</h3>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          I am an experienced web designer, developer, and game developer with a strong background in IT and extensive experience in various projects. Currently, I am studying software development in vocational school as a second-year student. I have been involved in development and programming for six years, which has provided me with comprehensive skills and knowledge in this field.
+        </p>
+
+        <h4 class="text-xl font-semibold text-white mb-3">Motivation and Goals</h4>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          My primary motivation comes from knowing that my work helps others—whether it’s clients needing quality solutions or projects aimed at achieving something meaningful. I feel satisfied when I successfully complete a project, especially when the results exceed expectations. In terms of goals, I aim to become an even more professional and skilled developer and to create increasingly complex and innovative solutions in the future.
+        </p>
+
+        <h4 class="text-xl font-semibold text-white mb-3">Work Ethic and Values</h4>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          I value quality and precision in my work. Feedback from clients and colleagues confirms that my projects are reliable, functional, and visually appealing. It’s important to me that the work I do is not only correct and efficient but also inspiring and useful.
+        </p>
+
+        <h4 class="text-xl font-semibold text-white mb-3">Professional Achievements</h4>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          My greatest achievements so far include several successful projects completed both independently and in teams. For example, I have developed FiveM servers that enhanced the gaming experience and received positive feedback. I have also created various scripts and custom solutions for both games and web development.
+        </p>
+
+        <h4 class="text-xl font-semibold text-white mb-3">Strengths and Weaknesses</h4>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          My biggest strengths are my ability to understand and write code, as well as my quick learning ability. Most of my knowledge and skills were acquired independently before I began formal studies. However, I still have room to grow in areas like creating animations and working with PHP.
+        </p>
+
+        <h4 class="text-xl font-semibold text-white mb-3">Hobbies and Free Time</h4>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          In my free time, I enjoy engaging in active and creative hobbies. I play computer games like Rust, DayZ, Squad, Minecraft, FiveM, RDR2, and GTA5. I also enjoy spending time outdoors, playing airsoft, and cycling. These activities help me maintain a balance between work and leisure.
+        </p>
+
+        <h4 class="text-xl font-semibold text-white mb-3">Studies and Professional Development</h4>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          I am currently studying software development in vocational school, which complements my existing knowledge. I encounter code daily, both at school and at home, as programming is my greatest passion and a lifestyle.
+        </p>
+
+        <h4 class="text-xl font-semibold text-white mb-3">Collaboration and Creativity</h4>
+        <p class="text-gray-400 leading-relaxed mb-6">
+          Collaboration and teamwork are my strengths. I am a good communicator and enjoy sharing ideas that take projects to the next level. I always strive to combine creativity and technical skills to achieve something truly unique and valuable.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
       <!-- Call-to-Action Section -->
       <div class="text-center px-6 md:px-10 mt-16">
         <p class="uppercase tracking-widest text-slate-400 text-xl">

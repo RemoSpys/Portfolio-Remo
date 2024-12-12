@@ -1,6 +1,6 @@
 <template>
   <section
-    class="flex flex-col h-screen bg-[url(./src/assets/homebg5.gif)] bg-cover bg-center"
+    class="flex flex-col h-screen bg-[url(./src/assets/home.webp)] bg-cover bg-center"
   >
     <div class="flex flex-row justify-center items-center flex-grow">
       <h1 class="text-white text-6xl md:text-9xl text-center mb-6">
