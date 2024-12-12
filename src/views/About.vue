@@ -16,52 +16,6 @@
         </p>
       </div>
 
-      <!-- About Me Section -->
-      <div class="mt-12 text-center px-6 md:px-10">
-        <div class="flex justify-center items-center w-full">
-          <div
-            class="relative w-full md:w-2/3 lg:w-1/2 px-6 py-8 bg-gray-800 border border-gray-600 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300"
-          >
-            <p class="uppercase tracking-widest text-xs font-semibold text-cyan-500 mb-3">
-              Web Design Expert
-            </p>
-
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-6">
-              Crafting Websites and Game Development that Speak for Your Brand
-            </h2>
-
-            <p class="text-gray-400 font-semibold leading-relaxed mb-6">
-              Hi! I'm RemoSpys, a highly skilled web designer, developer, and
-              game developer. I combine creativity with cutting-edge technology
-              to bring almost any idea to life. Whether it's a stunning website
-              or custom scripts for games like FiveM, Rust, DayZ, or Minecraft,
-              I specialize in crafting interactive, highly functional solutions
-              tailored just for you.
-            </p>
-
-            <p class="text-gray-400 font-semibold leading-relaxed mb-6">
-              Collaboration is at the heart of my process. I take the time to
-              listen to your ideas and ensure that the final product not only
-              looks great but functions perfectly across all platforms. I focus
-              on making your vision come true with clean, intuitive, and
-              user-friendly designs.
-            </p>
-
-            <p class="text-gray-400 font-semibold leading-relaxed mb-6">
-              As a developer, I love pushing the boundaries of what’s possible.
-              Whether it's building complex game scripts that enhance the player
-              experience or creating seamless animations for websites, I always
-              strive to deliver results that exceed expectations.
-            </p>
-
-            <p class="text-gray-400 font-semibold leading-relaxed">
-              Ready to create something amazing together? Let's turn your ideas
-              into reality, whether it's a website or a custom game server.
-            </p>
-          </div>
-        </div>
-      </div>
-
 <!-- About Me Section -->
 <div class="mt-12 text-center px-6 md:px-10">
   <div class="flex justify-center items-center w-full">
@@ -69,7 +23,7 @@
       class="relative w-full md:w-2/3 lg:w-1/2 px-6 py-8 bg-gray-800 border border-gray-600 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300"
     >
       <div class="mt-10">
-        <h3 class="text-2xl font-bold text-white mb-4">Self-Analysis – Remo</h3>
+        <h3 class="text-4xl font-bold text-white mb-4">Self-Analysis – Remo</h3>
         <p class="text-gray-400 leading-relaxed mb-6">
           I am an experienced web designer, developer, and game developer with a strong background in IT and extensive experience in various projects. Currently, I am studying software development in vocational school as a second-year student. I have been involved in development and programming for six years, which has provided me with comprehensive skills and knowledge in this field.
         </p>
@@ -109,11 +63,45 @@
           Collaboration and teamwork are my strengths. I am a good communicator and enjoy sharing ideas that take projects to the next level. I always strive to combine creativity and technical skills to achieve something truly unique and valuable.
         </p>
       </div>
+      <div class="mt-32">
+        <h3 class="text-3xl font-bold text-white mb-4">Soft Skills and Development</h3>
+
+        <p class="text-gray-400 leading-relaxed mb-6">
+          <strong>Problem-Solving Skill</strong><br>
+          <em>Example:</em> In a FiveM server, an inventory synchronization issue arose. I analyzed logs, identified a configuration problem, and resolved it by optimizing scripts.
+        </p>
+
+        <p class="text-gray-400 leading-relaxed mb-6">
+          <strong>Teamwork Skill</strong><br>
+          <em>Example:</em> Collaborated with a team to develop a heist system. We divided tasks, tested solutions, and supported each other, successfully completing the project.
+        </p>
+
+        <p class="text-gray-400 leading-relaxed mb-6">
+          <strong>Area for Improvement: Conflict Resolution Among Players (FiveM)</strong><br>
+          <em>Goal:</em> Develop the ability to calmly resolve conflicts between players and maintain a positive server community.<br>
+          <strong>Plan:</strong>
+          <ul class="list-disc text-left text-gray-400 p-6">
+            <li>Research successful community management practices.</li>
+            <li>Practice balanced and calm communication in challenging situations.</li>
+            <li>Gather feedback from players and the team to improve conflict resolution strategies.</li>
+          </ul>
+        </p>
+      </div>
     </div>
   </div>
 </div>
 
 
+<!-- About Me Section -->
+<div class="mt-12 text-center px-6 md:px-10">
+  <div class="flex justify-center items-center w-full">
+    <div
+      class="relative w-full md:w-2/3 lg:w-1/2 px-6 py-8 bg-gray-800 border border-gray-600 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300"
+    >
+
+    </div>
+  </div>
+</div>
 
       <!-- Call-to-Action Section -->
       <div class="text-center px-6 md:px-10 mt-16">
