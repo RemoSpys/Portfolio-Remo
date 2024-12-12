@@ -91,18 +91,6 @@
   </div>
 </div>
 
-
-<!-- About Me Section -->
-<div class="mt-12 text-center px-6 md:px-10">
-  <div class="flex justify-center items-center w-full">
-    <div
-      class="relative w-full md:w-2/3 lg:w-1/2 px-6 py-8 bg-gray-800 border border-gray-600 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300"
-    >
-
-    </div>
-  </div>
-</div>
-
       <!-- Call-to-Action Section -->
       <div class="text-center px-6 md:px-10 mt-16">
         <p class="uppercase tracking-widest text-slate-400 text-xl">
