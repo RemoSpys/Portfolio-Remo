@@ -48,7 +48,7 @@
       </button>
       <a
         :href="cvFile"
-        download="Remo.pdf"
+        download="Remo CV"
         class="flex items-center text-gray-300 hover:text-blue-400 font-bold p-2 rounded-xl hover:underline transition"
       >
         <i class="fas fa-file-download mr-2"></i>
@@ -80,7 +80,7 @@
       </button>
       <a
         :href="cvFile"
-        download="Remo.pdf"
+        download="Remo CV"
         class="flex items-center text-gray-300 font-bold rounded-xl hover:underline transition"
       >
         <i class="fas fa-file-download mr-2"></i>
@@ -120,7 +120,7 @@ export default {
         { name: "About", href: "/about", icon: "fas fa-info-circle" },
       ],
       isMenuOpen: false,
-      cvFile: "path/to/Remo.pdf",
+      cvFile: "src/assets/Remo-CV.zip",
     };
   },
   methods: {
