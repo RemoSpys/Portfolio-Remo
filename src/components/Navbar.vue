@@ -46,6 +46,14 @@
         <i class="fas fa-comment-dots mr-2"></i>
         Let's talk
       </button>
+      <a
+        :href="cvFile"
+        download="Remo.pdf"
+        class="flex items-center text-gray-300 hover:text-blue-400 font-bold p-2 rounded-xl hover:underline transition"
+      >
+        <i class="fas fa-file-download mr-2"></i>
+        Download CV
+      </a>
     </div>
 
     <!-- Mobile Menu -->
@@ -70,6 +78,14 @@
         <i class="fas fa-comment-dots mr-2"></i>
         Let's talk
       </button>
+      <a
+        :href="cvFile"
+        download="Remo.pdf"
+        class="flex items-center text-gray-300 font-bold rounded-xl hover:underline transition"
+      >
+        <i class="fas fa-file-download mr-2"></i>
+        Download CV
+      </a>
       <button
         @click="closeMenu"
         class="absolute top-4 right-4 text-gray-300 hover:text-blue-400"
@@ -104,6 +120,7 @@ export default {
         { name: "About", href: "/about", icon: "fas fa-info-circle" },
       ],
       isMenuOpen: false,
+      cvFile: "path/to/Remo.pdf", // Replace with the actual path to your PDF file
     };
   },
   methods: {
