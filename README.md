@@ -11,6 +11,10 @@ This repository contains a modern web portfolio built with **Vue 3** and **Vite*
 - Optimized production build
 
 ---
+## Versions
+- Node -v (v23.2.0)
+- Nvm -v (0.39.1)
+- Npm -v (10.9.0)
 
 ## Prerequisites
 
@@ -104,13 +108,6 @@ To ensure compatibility, update to the latest versions of Node.js and npm:
    node -v
    npm -v
    ```
-
----
-
-## Recommended IDE Setup
-
-- **[VSCode](https://code.visualstudio.com/)**: Lightweight and feature-rich IDE.
-- **[Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)**: Vue 3 support for VSCode (disable Vetur for best results).
 
 ---
 
