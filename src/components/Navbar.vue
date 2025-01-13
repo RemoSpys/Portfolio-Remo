@@ -120,7 +120,7 @@ export default {
         { name: "About", href: "/about", icon: "fas fa-info-circle" },
       ],
       isMenuOpen: false,
-      cvFile: "path/to/Remo.pdf", // Replace with the actual path to your PDF file
+      cvFile: "path/to/Remo.pdf",
     };
   },
   methods: {
