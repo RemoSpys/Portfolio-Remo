@@ -90,6 +90,55 @@
     </div>
   </div>
 </div>
+<div class="mt-12 text-center px-6 md:px-10">
+    <div class="flex justify-center items-center w-full">
+      <div
+        class="relative w-full md:w-2/3 lg:w-1/2 px-6 py-8 bg-gray-800 border border-gray-600 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300"
+      >
+        <div class="mt-10">
+          <h3 class="text-4xl font-bold text-white mb-4">My projects</h3>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            <strong>Situation:</strong> Participated in several projects including the Spider-Man 2023 project, Barcode project, and Måneskin project. My tasks primarily involved design, documentation, and guidance. These were team-based projects aimed at creating functional and visually appealing websites.
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            <strong>Task:</strong> My roles varied:
+            <ul class="list-disc text-left text-gray-400 p-6">
+              <li><em>Spider-Man project:</em> Responsible for creating README.md, using Figma for designs and prototypes, and coordinating workflows.</li>
+              <li><em>Barcode project:</em> Documented the workflow and contributed to both back-end and design.</li>
+              <li><em>Måneskin project:</em> Contributed to CSS animations and designs in Figma.</li>
+            </ul>
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            <strong>Activities:</strong>
+            <ul class="list-disc text-left text-gray-400 p-6">
+              <li>Created README.md documentation ensuring clarity and completeness.</li>
+              <li>Used Figma to create designs and prototypes adhering to team-agreed styles and color palettes.</li>
+              <li>Contributed to HTML and CSS coding and helped recall forgotten skills.</li>
+              <li>Utilized GitHub for version control, documentation, and pull requests.</li>
+              <li>Improved speed test results and uploaded projects to Zone server.</li>
+            </ul>
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            <strong>Result:</strong>
+            <ul class="list-disc text-left text-gray-400 p-6">
+              <li>All projects were submitted on time and met their objectives.</li>
+              <li>In the Spider-Man project, we delivered a functional website with desktop and mobile views. The README.md was well-received.</li>
+              <li>The Barcode project improved technical management and usability.</li>
+              <li>The Måneskin project resulted in a functional band website with animations showcasing creativity and a unified style.</li>
+            </ul>
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            <strong>Reflection:</strong>
+            <ul class="list-disc text-left text-gray-400 p-6">
+              <li><strong>Lessons learned:</strong> Gained an appreciation for teamwork and effective communication. Improved skills in Figma, speed testing, and Zone server usage, along with enhanced CSS and GitHub knowledge.</li>
+              <li><strong>Areas for improvement:</strong> Although satisfied with my roles, I aim to deepen my front-end programming skills (HTML and CSS).</li>
+              <li><strong>Future plans:</strong> In upcoming projects, I plan to focus more on coding and enhancing UI/UX designs. Additionally, I aim to develop mentoring skills to support team members effectively.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
       <!-- Call-to-Action Section -->
       <div class="text-center px-6 md:px-10 mt-16">
