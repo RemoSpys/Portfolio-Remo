@@ -120,7 +120,7 @@ export default {
         { name: "About", href: "/about", icon: "fas fa-info-circle" },
       ],
       isMenuOpen: false,
-      cvFile: "src/assets/Remo-CV.zip",
+      cvFile: "src/assets/Remo.pdf",
     };
   },
   methods: {
