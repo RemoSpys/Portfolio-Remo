@@ -1,11 +1,6 @@
-<script setup>
-import homeImage from '../assets/homebg2.gif'; // Adjust path as per the file's location
-</script>
-
 <template>
   <section
-    class="flex flex-col h-screen bg-cover bg-center"
-    :style="{ backgroundImage: `url(${homeImage})` }"
+    class="flex flex-col h-screen bg-[url(./src/assets/homebg5.gif)] bg-cover bg-center"
   >
     <div class="flex flex-row justify-center items-center flex-grow">
       <h1 class="text-white text-6xl md:text-9xl text-center mb-6">
